@@ -1,0 +1,63 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizz</title>
+    <link rel="icon" href="circle-question-regular.svg" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .div{
+            height: 88%;
+        }
+        .lien-desactive {
+            pointer-events: none; 
+            color: gray;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="bg-gray-800 border">
+    <div class="border div">
+        <div class="border flex justify-center items-center border-white mt-6 h-16 max-w-96 mx-auto">
+            <div class="bg-blue-500 w-full h-full flex justify-center items-center">
+                <h1 class="text-white text-2xl font-bold">
+                    Jeu de Quizz
+                </h1>
+            </div>
+        </div>
+        <div class="border flex justify-center items-center border-white mt-6 h-36 w-auto mx-auto rounded max-w-96">
+            <div class="bg-blue-300 w-full h-full">
+                <p class="text-white font-semibold text-center mt-5">Quel est le plus grand océan de la Terre ?</p>
+                <div class="flex items-center justify-center mt-1">
+                    <input type="text" name="" id="question" placeholder="Votre réponse" class="text-center border-none rounded">
+                </div>
+                <div class="flex justify-center items-center mt-2 hover:text-blue-600">
+                    <button onclick="valider()">Vérifier</button>
+                </div>
+                <div class="flex justify-center items-center mt-[2px] hover:text-blue-600">
+                    <a id="monLien" class="lien-desactive">Question Suivante</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-blue-500 h-[93px] text-white py-4 text-center my-auto">
+        <div class="w-full h-auto mx-auto mt-5">
+            &copy; 2024 Mikailou. Tous droits réservés.
+        </div>
+    </footer>
+    <script>
+        function valider() {
+            const reponse = document.getElementById("question").value;
+            const monLien = document.getElementById('monLien');
+            if (reponse.toLowerCase() === "océan pacifique") {
+                monLien.setAttribute('href', 'index5.html');
+                monLien.classList.remove('lien-desactive');
+                alert('Vous avez trouvé la réponse');
+            }
+            else{
+                alert('Réponse incorrecte');
+            }
+        }
+    </script>
+</body>
+</html>
